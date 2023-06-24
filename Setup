@@ -1,0 +1,2 @@
+QFT is a quantum version of the classical Fast Fourier Transform (FFT). 
+It's a linear transformation on quantum bits and is part of many quantum algorithms, notably Shor's algorithm for factoring and quantum phase estimation.
