@@ -1,0 +1,20 @@
+Here's a simple implementation of QFT in Qiskit, a Python library for quantum computing.
+
+
+
+     from qiskit import QuantumCircuit, transpile
+     from qiskit.visualization import plot_bloch_multivector, plot_histogram
+     from math import pi
+
+     def qft_rotations(circuit, n):
+         if n == 0: 
+             return circuit
+         n -= 1
+         circuit.h(n)
+         for qubit in range(n):
+             circuit.cp(pi/2**(n-qubit), qubit, n)
+         qft_rotations(circuit, n)
+
+     qc = QuantumCircuit(4)
+     qft_rotations(qc,4)
+     qc.draw()
